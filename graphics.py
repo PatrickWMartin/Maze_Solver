@@ -1,19 +1,18 @@
 from tkinter import Tk, BOTH, Canvas
-from typing import Type
 
 
 class Point:
-    def __init__(self, x, y):
+    def __init__(self, x: int, y: int):
         self.x = x
         self.y = y
 
 
 class Line:
-    def __init__(self, point1: Type[Point], point2: Type[Point]):
+    def __init__(self, point1: Point, point2: Point):
         self.point1 = point1
         self.point2 = point2
 
-    def draw(self, canvas: Canvas, fill_color: str) -> None:
+    def draw(self, canvas: Canvas, fill_color: str = 'black') -> None:
         canvas.create_line(
             self.point1.x, self.point1.y,
             self.point2.x, self.point2.y,
@@ -44,5 +43,5 @@ class Window:
     def close(self) -> None:
         self._running = False
 
-    def draw_line(self, line: Type[Line], fill_color: str) -> None:
+    def draw_line(self, line: Line, fill_color: str = 'black') -> None:
         line.draw(self._canvas, fill_color)
