@@ -83,8 +83,8 @@ class Maze:
             next_cell = self._cells[next_cell_ij[0]][next_cell_ij[1]]
 
             if next_cell_ij[0] == i - 1:
-                current_cell.has_right_wall = False
-                next_cell.has_left_wall = False
+                current_cell.has_left_wall = False
+                next_cell.has_right_wall = False
 
             if next_cell_ij[1] == j - 1:
                 current_cell.has_top_wall = False
